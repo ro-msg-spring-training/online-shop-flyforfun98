@@ -1,6 +1,7 @@
 package ro.msg.learning.shop.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,7 +18,7 @@ public class StockController {
 
     @GetMapping(value = "/stocks/export/{locationId}",
                 produces = "text/csv")
-    public List<Stock> getStocksByLocationId(@PathVariable int locationId){
+    public List<Stock> getStocksByLocationId(@AuthenticationPrincipal @PathVariable int locationId){
         return stockService.getStocksByLocationId(locationId);
     }
 }

@@ -25,4 +25,10 @@ public class ProductCategory extends BaseEntity<Integer>{
 
     @OneToMany(mappedBy = "category", fetch = FetchType.EAGER)
     private List<Product> products;
+
+    public ProductCategory(Integer id, String name, String description){
+        super(id);
+        this.name = name;
+        this.description = description;
+    }
 }

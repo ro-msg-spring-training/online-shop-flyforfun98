@@ -4,6 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import ro.msg.learning.shop.repository.*;
+import ro.msg.learning.shop.repository.jdbc.ProductCategoryJDBC;
+import ro.msg.learning.shop.repository.jdbc.ProductJDBC;
 
 @Component
 @RequiredArgsConstructor
@@ -11,12 +13,12 @@ import ro.msg.learning.shop.repository.*;
 public class DataRepositoryFactory implements RepositoryFactory {
 
     private final DataSupplierRepository supplierRepository;
-    private final DataProductCategoryRepository productCategoryRepository;
+    private final ProductCategoryJDBC productCategoryJDBC;
     private final DataOrderRepository orderRepository;
     private final DataCustomerRepository customerRepository;
     private final DataLocationRepository locationRepository;
     private final DataRevenueRepository revenueRepository;
-    private final DataProductRepository productRepository;
+    private final ProductJDBC productRepository;
     private final DataStockRepository stockRepository;
     private final DataOrderDetailRepository orderDetailRepository;
 
@@ -28,7 +30,7 @@ public class DataRepositoryFactory implements RepositoryFactory {
 
     @Override
     public ProductCategoryRepository productCategoryRepository() {
-        return productCategoryRepository;
+        return productCategoryJDBC;
     }
 
     @Override

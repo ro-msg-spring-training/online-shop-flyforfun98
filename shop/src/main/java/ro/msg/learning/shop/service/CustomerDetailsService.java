@@ -35,7 +35,7 @@ public class CustomerDetailsService implements UserDetailsService {
     private Collection<GrantedAuthority> getGrantedAuthorities(){
 
         Collection<GrantedAuthority> grantedAuthorities = new ArrayList<>();
-        grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_DOCTOR"));
+        grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_USER"));
 
         return grantedAuthorities;
     }

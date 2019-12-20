@@ -39,6 +39,15 @@ public class Product extends BaseEntity<Integer> {
     @Column
     private String imageUrl;
 
+    public Product(Integer id, String name, String description, BigDecimal price, Double weight, String imageUrl) {
+        super(id);
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.weight = weight;
+        this.imageUrl = imageUrl;
+    }
+
     @Override
     public String toString() {
         return "Product{" +

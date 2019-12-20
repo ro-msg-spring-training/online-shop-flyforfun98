@@ -1,6 +1,7 @@
 package ro.msg.learning.shop.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,7 +18,7 @@ public class OrderController {
     private final OrderManagementService orderService;
 
     @PostMapping(value = "/orders")
-    public List<OrderDTO> createOrder(@RequestBody OrderProductQuantityDTO orderProductQuantityDTO){
+    public List<OrderDTO> createOrder(@AuthenticationPrincipal @RequestBody OrderProductQuantityDTO orderProductQuantityDTO){
 
         return orderService.saveOrders(orderProductQuantityDTO);
     }

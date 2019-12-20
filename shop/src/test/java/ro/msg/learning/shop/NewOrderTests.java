@@ -24,6 +24,8 @@ import ro.msg.learning.shop.dto.OrderProductQuantityDTO;
 import ro.msg.learning.shop.dto.ProductAndQuantityDTO;
 import ro.msg.learning.shop.entity.*;
 import ro.msg.learning.shop.repository.data.*;
+import ro.msg.learning.shop.repository.jdbc.ProductCategoryJDBC;
+import ro.msg.learning.shop.repository.jdbc.ProductJDBC;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -51,11 +53,11 @@ class NewOrderTests {
     @MockBean
     private DataSupplierRepository supplierRepository;
     @MockBean
-    private DataProductRepository productRepository;
+    private ProductJDBC productRepository;
     @MockBean
     private DataOrderRepository orderRepository;
     @MockBean
-    private DataProductCategoryRepository productCategoryRepository;
+    private ProductCategoryJDBC productCategoryRepository;
     @MockBean
     private DataCustomerRepository customerRepository;
     @MockBean
